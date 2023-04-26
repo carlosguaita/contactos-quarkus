@@ -25,7 +25,7 @@ public class ApiController {
     @GET
     @Path("{cedula}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getbyid(@PathParam(value = "cedula") String cedula) {
+    public Response getContacto(@PathParam(value = "cedula") String cedula) {
         Contacto contacto = Utils.listaContactos.stream().filter(x->x.getCedula().equals(cedula)).findAny().orElse(null);
         if (contacto!=null){
             return Response.ok(contacto).build();
